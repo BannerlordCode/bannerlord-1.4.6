@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{0231798F-9D7C-4F80-85CE-93384AEB9FF6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TaleWorlds.MountAndBlade.SteamWorkshop</RootNamespace>
+    <AssemblyName>TaleWorlds.MountAndBlade.SteamWorkshop</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <FileAlignment>512</FileAlignment>
+    <TargetFramework>net472</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoStdLib>True</NoStdLib>
+    <EnableDefaultItems>False</EnableDefaultItems>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TaleWorlds.MountAndBlade.SteamWorkshop.ico</ApplicationIcon>
+    <StartupObject>TaleWorlds.MountAndBlade.SteamWorkshop.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CreateItemTask.cs" />
+    <Compile Include="GetItemTask.cs" />
+    <Compile Include="ItemVisibility.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToolDebugManager.cs" />
+    <Compile Include="ToolTask.cs" />
+    <Compile Include="UpdateItemTask.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mscorlib\mscorlib.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FC7}</Project>
+      <Name>mscorlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Steamworks.NET\Steamworks.NET.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FCE}</Project>
+      <Name>Steamworks.NET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.Library\TaleWorlds.Library.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FE7}</Project>
+      <Name>TaleWorlds.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.ModuleManager\TaleWorlds.ModuleManager.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FEA}</Project>
+      <Name>TaleWorlds.ModuleManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+</Project>

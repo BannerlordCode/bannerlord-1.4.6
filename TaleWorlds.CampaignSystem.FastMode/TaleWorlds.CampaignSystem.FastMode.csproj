@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{0231798F-9D7C-4F80-85CE-93384AEBA00A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TaleWorlds.CampaignSystem.FastMode</RootNamespace>
+    <AssemblyName>TaleWorlds.CampaignSystem.FastMode</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <FileAlignment>512</FileAlignment>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoStdLib>True</NoStdLib>
+    <EnableDefaultItems>False</EnableDefaultItems>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Include="FastModeOptionsProvider.cs" />
+    <Compile Include="FastModeSubModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FC8}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.CampaignSystem.ViewModelCollection\TaleWorlds.CampaignSystem.ViewModelCollection.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FD4}</Project>
+      <Name>TaleWorlds.CampaignSystem.ViewModelCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.CampaignSystem\TaleWorlds.CampaignSystem.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FD3}</Project>
+      <Name>TaleWorlds.CampaignSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.Core\TaleWorlds.Core.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FD5}</Project>
+      <Name>TaleWorlds.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.MountAndBlade\TaleWorlds.MountAndBlade.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FED}</Project>
+      <Name>TaleWorlds.MountAndBlade</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+</Project>

@@ -1,0 +1,184 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{0231798F-9D7C-4F80-85CE-93384AEBA01E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>StoryMode.GauntletUI</RootNamespace>
+    <AssemblyName>StoryMode.GauntletUI</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <FileAlignment>512</FileAlignment>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoStdLib>True</NoStdLib>
+    <EnableDefaultItems>False</EnableDefaultItems>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Include="Map\GauntletStoryModeMapCheatsView.cs" />
+    <Compile Include="Missions\MissionGauntletTrainingFieldObjectiveView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SandBox\GauntletUI\Missions\MissionGauntletStoryModeCheatView.cs" />
+    <Compile Include="StoryModeGauntletUISubModule.cs" />
+    <Compile Include="Tutorial\ArmyCohesionStep1Tutorial.cs" />
+    <Compile Include="Tutorial\ArmyCohesionStep2Tutorial.cs" />
+    <Compile Include="Tutorial\AssignRolesTutorial.cs" />
+    <Compile Include="Tutorial\BombardmentStep1Tutorial.cs" />
+    <Compile Include="Tutorial\BuyingFoodStep1Tutorial.cs" />
+    <Compile Include="Tutorial\BuyingFoodStep2Tutorial.cs" />
+    <Compile Include="Tutorial\BuyingFoodStep3Tutorial.cs" />
+    <Compile Include="Tutorial\ChoosingPerkUpgradesStep1Tutorial.cs" />
+    <Compile Include="Tutorial\ChoosingPerkUpgradesStep2Tutorial.cs" />
+    <Compile Include="Tutorial\ChoosingPerkUpgradesStep3Tutorial.cs" />
+    <Compile Include="Tutorial\ChoosingSkillFocusStep1Tutorial.cs" />
+    <Compile Include="Tutorial\ChoosingSkillFocusStep2Tutorial.cs" />
+    <Compile Include="Tutorial\CraftingOrdersTutorial.cs" />
+    <Compile Include="Tutorial\CraftingStep1Tutorial.cs" />
+    <Compile Include="Tutorial\CreateArmyStep1Tutorial.cs" />
+    <Compile Include="Tutorial\CreateArmyStep2Tutorial.cs" />
+    <Compile Include="Tutorial\CreateArmyStep3Tutorial.cs" />
+    <Compile Include="Tutorial\CrimeTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaClansTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaConceptsTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaFiltersTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaFogOfWarTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaHomeTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaKingdomsTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaPageTutorialBase.cs" />
+    <Compile Include="Tutorial\EncyclopediaSearchTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaSettlementsTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaSortTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaTrackTutorial.cs" />
+    <Compile Include="Tutorial\EncyclopediaTroopsTutorial.cs" />
+    <Compile Include="Tutorial\EnterVillageTutorial.cs" />
+    <Compile Include="Tutorial\EquipmentSetsTutorial.cs" />
+    <Compile Include="Tutorial\GettingCompanionsStep1Tutorial.cs" />
+    <Compile Include="Tutorial\GettingCompanionsStep2Tutorial.cs" />
+    <Compile Include="Tutorial\GettingCompanionsStep3Tutorial.cs" />
+    <Compile Include="Tutorial\InventoryBannerItemTutorial.cs" />
+    <Compile Include="Tutorial\KingdomDecisionVotingTutorial.cs" />
+    <Compile Include="Tutorial\MovementInMissionTutorial.cs" />
+    <Compile Include="Tutorial\NavigateOnMapTutorialStep1.cs" />
+    <Compile Include="Tutorial\NavigateOnMapTutorialStep2.cs" />
+    <Compile Include="Tutorial\OrderHideoutTutorial.cs" />
+    <Compile Include="Tutorial\OrderOfBattleTutorialStep1Tutorial.cs" />
+    <Compile Include="Tutorial\OrderOfBattleTutorialStep2Tutorial.cs" />
+    <Compile Include="Tutorial\OrderOfBattleTutorialStep3Tutorial.cs" />
+    <Compile Include="Tutorial\OrderTutorialStep1.cs" />
+    <Compile Include="Tutorial\OrderTutorialStep2.cs" />
+    <Compile Include="Tutorial\PartySpeedTutorial.cs" />
+    <Compile Include="Tutorial\PressLeaveToReturnFromMissionTutorial1.cs" />
+    <Compile Include="Tutorial\PressLeaveToReturnFromMissionTutorial2.cs" />
+    <Compile Include="Tutorial\QuestScreenTutorial.cs" />
+    <Compile Include="Tutorial\RaidVillageStep1Tutorial.cs" />
+    <Compile Include="Tutorial\RansomingPrisonersStep1Tutorial.cs" />
+    <Compile Include="Tutorial\RansomingPrisonersStep2Tutorial.cs" />
+    <Compile Include="Tutorial\RecruitmentStep1Tutorial.cs" />
+    <Compile Include="Tutorial\RecruitmentStep2Tutorial.cs" />
+    <Compile Include="Tutorial\SeeMarkersInMissionTutorial.cs" />
+    <Compile Include="Tutorial\StealthCrouchTutorial.cs" />
+    <Compile Include="Tutorial\StealthDarkZoneTutorial.cs" />
+    <Compile Include="Tutorial\StealthDistractionTutorial.cs" />
+    <Compile Include="Tutorial\StealthHideCorpseTutorial.cs" />
+    <Compile Include="Tutorial\StealthHideInBushesTutorial.cs" />
+    <Compile Include="Tutorial\StealthStealthKillTutorial.cs" />
+    <Compile Include="Tutorial\StealthWalkSlowTutorial.cs" />
+    <Compile Include="Tutorial\TakingPrisonersTutorial.cs" />
+    <Compile Include="Tutorial\TalkToNotableTutorialStep1.cs" />
+    <Compile Include="Tutorial\TalkToNotableTutorialStep2.cs" />
+    <Compile Include="Tutorial\UpgradingTroopsStep1Tutorial.cs" />
+    <Compile Include="Tutorial\UpgradingTroopsStep2Tutorial.cs" />
+    <Compile Include="Tutorial\UpgradingTroopsStep3Tutorial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\netstandard\netstandard.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FC8}</Project>
+      <Name>netstandard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBox.GauntletUI\SandBox.GauntletUI.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA019}</Project>
+      <Name>SandBox.GauntletUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBox.ViewModelCollection\SandBox.ViewModelCollection.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA01B}</Project>
+      <Name>SandBox.ViewModelCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBox.View\SandBox.View.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA01A}</Project>
+      <Name>SandBox.View</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBox\SandBox.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA016}</Project>
+      <Name>SandBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StoryMode.ViewModelCollection\StoryMode.ViewModelCollection.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA020}</Project>
+      <Name>StoryMode.ViewModelCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StoryMode.View\StoryMode.View.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA01F}</Project>
+      <Name>StoryMode.View</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StoryMode\StoryMode.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA01C}</Project>
+      <Name>StoryMode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.CampaignSystem.ViewModelCollection\TaleWorlds.CampaignSystem.ViewModelCollection.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FD4}</Project>
+      <Name>TaleWorlds.CampaignSystem.ViewModelCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.CampaignSystem\TaleWorlds.CampaignSystem.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FD3}</Project>
+      <Name>TaleWorlds.CampaignSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.Core.ViewModelCollection\TaleWorlds.Core.ViewModelCollection.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FD6}</Project>
+      <Name>TaleWorlds.Core.ViewModelCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.Core\TaleWorlds.Core.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FD5}</Project>
+      <Name>TaleWorlds.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.Engine.GauntletUI\TaleWorlds.Engine.GauntletUI.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FE0}</Project>
+      <Name>TaleWorlds.Engine.GauntletUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.GauntletUI\TaleWorlds.GauntletUI.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FE3}</Project>
+      <Name>TaleWorlds.GauntletUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.InputSystem\TaleWorlds.InputSystem.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FE6}</Project>
+      <Name>TaleWorlds.InputSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.Library\TaleWorlds.Library.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FE7}</Project>
+      <Name>TaleWorlds.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.Localization\TaleWorlds.Localization.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FE9}</Project>
+      <Name>TaleWorlds.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.MountAndBlade.ViewModelCollection\TaleWorlds.MountAndBlade.ViewModelCollection.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FF7}</Project>
+      <Name>TaleWorlds.MountAndBlade.ViewModelCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.MountAndBlade.View\TaleWorlds.MountAndBlade.View.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA015}</Project>
+      <Name>TaleWorlds.MountAndBlade.View</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.MountAndBlade\TaleWorlds.MountAndBlade.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FED}</Project>
+      <Name>TaleWorlds.MountAndBlade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.ObjectSystem\TaleWorlds.ObjectSystem.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEB9FFA}</Project>
+      <Name>TaleWorlds.ObjectSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaleWorlds.ScreenSystem\TaleWorlds.ScreenSystem.csproj">
+      <Project>{0231798F-9D7C-4F80-85CE-93384AEBA002}</Project>
+      <Name>TaleWorlds.ScreenSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+</Project>

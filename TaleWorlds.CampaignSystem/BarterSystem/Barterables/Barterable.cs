@@ -1,0 +1,177 @@
+﻿using System;
+using System.Collections.Generic;
+using TaleWorlds.CampaignSystem.Party;
+using TaleWorlds.Core.ImageIdentifiers;
+using TaleWorlds.Library;
+using TaleWorlds.Localization;
+
+namespace TaleWorlds.CampaignSystem.BarterSystem.Barterables
+{
+	// Token: 0x0200047F RID: 1151
+	public abstract class Barterable
+	{
+		// Token: 0x0600490B RID: 18699 RVA: 0x001732DB File Offset: 0x001714DB
+		protected Barterable(Hero originalOwner, PartyBase originalParty)
+		{
+			this.OriginalOwner = originalOwner;
+			this.OriginalParty = originalParty;
+			this.CurrentAmount = 1;
+			this._linkedBarterables = new MBList<Barterable>();
+			this.Side = Barterable.BarterSide.Left;
+		}
+
+		// Token: 0x17000E6C RID: 3692
+		// (get) Token: 0x0600490C RID: 18700
+		public abstract string StringID { get; }
+
+		// Token: 0x17000E6D RID: 3693
+		// (get) Token: 0x0600490D RID: 18701 RVA: 0x0017330A File Offset: 0x0017150A
+		// (set) Token: 0x0600490E RID: 18702 RVA: 0x00173312 File Offset: 0x00171512
+		public Hero OriginalOwner { get; private set; }
+
+		// Token: 0x17000E6E RID: 3694
+		// (get) Token: 0x0600490F RID: 18703 RVA: 0x0017331B File Offset: 0x0017151B
+		// (set) Token: 0x06004910 RID: 18704 RVA: 0x00173323 File Offset: 0x00171523
+		public PartyBase OriginalParty { get; private set; }
+
+		// Token: 0x17000E6F RID: 3695
+		// (get) Token: 0x06004911 RID: 18705
+		public abstract TextObject Name { get; }
+
+		// Token: 0x06004912 RID: 18706 RVA: 0x0017332C File Offset: 0x0017152C
+		public int GetValueForFaction(IFaction faction)
+		{
+			return this.GetUnitValueForFaction(faction) * this.CurrentAmount;
+		}
+
+		// Token: 0x06004913 RID: 18707 RVA: 0x0017333C File Offset: 0x0017153C
+		public virtual void CheckBarterLink(Barterable linkedBarterable)
+		{
+		}
+
+		// Token: 0x06004914 RID: 18708
+		public abstract int GetUnitValueForFaction(IFaction faction);
+
+		// Token: 0x17000E70 RID: 3696
+		// (get) Token: 0x06004915 RID: 18709 RVA: 0x0017333E File Offset: 0x0017153E
+		public virtual int MaxAmount
+		{
+			get
+			{
+				return 1;
+			}
+		}
+
+		// Token: 0x17000E71 RID: 3697
+		// (get) Token: 0x06004916 RID: 18710 RVA: 0x00173341 File Offset: 0x00171541
+		// (set) Token: 0x06004917 RID: 18711 RVA: 0x00173349 File Offset: 0x00171549
+		public int CurrentAmount
+		{
+			get
+			{
+				return this._currentAmout;
+			}
+			set
+			{
+				this._currentAmout = value;
+				if (this._currentAmout > this.MaxAmount)
+				{
+					this._currentAmout = this.MaxAmount;
+				}
+			}
+		}
+
+		// Token: 0x17000E72 RID: 3698
+		// (get) Token: 0x06004918 RID: 18712 RVA: 0x0017336C File Offset: 0x0017156C
+		// (set) Token: 0x06004919 RID: 18713 RVA: 0x00173374 File Offset: 0x00171574
+		public bool IsOffered { get; protected set; }
+
+		// Token: 0x17000E73 RID: 3699
+		// (get) Token: 0x0600491A RID: 18714 RVA: 0x0017337D File Offset: 0x0017157D
+		// (set) Token: 0x0600491B RID: 18715 RVA: 0x00173385 File Offset: 0x00171585
+		public bool IsContextDependent { get; protected set; }
+
+		// Token: 0x17000E74 RID: 3700
+		// (get) Token: 0x0600491C RID: 18716 RVA: 0x0017338E File Offset: 0x0017158E
+		// (set) Token: 0x0600491D RID: 18717 RVA: 0x00173396 File Offset: 0x00171596
+		public BarterGroup Group { get; protected set; }
+
+		// Token: 0x17000E75 RID: 3701
+		// (get) Token: 0x0600491E RID: 18718 RVA: 0x0017339F File Offset: 0x0017159F
+		public MBReadOnlyList<Barterable> LinkedBarterables
+		{
+			get
+			{
+				return this._linkedBarterables;
+			}
+		}
+
+		// Token: 0x17000E76 RID: 3702
+		// (get) Token: 0x0600491F RID: 18719 RVA: 0x001733A7 File Offset: 0x001715A7
+		public Barterable.BarterSide Side { get; }
+
+		// Token: 0x06004920 RID: 18720 RVA: 0x001733B0 File Offset: 0x001715B0
+		public void SetIsOffered(bool value)
+		{
+			if (this.IsOffered != value)
+			{
+				this.IsOffered = value;
+				foreach (Barterable barterable in this._linkedBarterables)
+				{
+					barterable.IsOffered = value;
+				}
+			}
+		}
+
+		// Token: 0x06004921 RID: 18721 RVA: 0x00173414 File Offset: 0x00171614
+		public void AddBarterLink(Barterable barterable)
+		{
+			this._linkedBarterables.Add(barterable);
+		}
+
+		// Token: 0x06004922 RID: 18722 RVA: 0x00173422 File Offset: 0x00171622
+		public void Initialize(BarterGroup barterGroup, bool isContextDependent)
+		{
+			this.Group = barterGroup;
+			this.IsContextDependent = isContextDependent;
+		}
+
+		// Token: 0x06004923 RID: 18723 RVA: 0x00173432 File Offset: 0x00171632
+		public virtual bool IsCompatible(Barterable barterable)
+		{
+			return true;
+		}
+
+		// Token: 0x06004924 RID: 18724
+		public abstract ImageIdentifier GetVisualIdentifier();
+
+		// Token: 0x06004925 RID: 18725 RVA: 0x00173435 File Offset: 0x00171635
+		public virtual string GetEncyclopediaLink()
+		{
+			return "";
+		}
+
+		// Token: 0x06004926 RID: 18726
+		public abstract void Apply();
+
+		// Token: 0x06004927 RID: 18727 RVA: 0x0017343C File Offset: 0x0017163C
+		protected virtual void AutoGeneratedInstanceCollectObjects(List<object> collectedObjects)
+		{
+		}
+
+		// Token: 0x04001432 RID: 5170
+		private int _currentAmout;
+
+		// Token: 0x04001436 RID: 5174
+		protected MBList<Barterable> _linkedBarterables;
+
+		// Token: 0x02000886 RID: 2182
+		public enum BarterSide
+		{
+			// Token: 0x04002471 RID: 9329
+			Left,
+			// Token: 0x04002472 RID: 9330
+			Right
+		}
+	}
+}
